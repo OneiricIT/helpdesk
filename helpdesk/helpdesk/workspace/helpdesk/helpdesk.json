@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"B6U0qNMVKn\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\" style=\\\"\\\"><a href=\\\"/helpdesk\\\">Visit Helpdesk</a></span>\",\"col\":12}},{\"id\":\"3C38cMww2v\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"YAQwt_F_dX\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Helpdesk Configuration<br></span>\",\"col\":12}},{\"id\":\"7PNVFuxM_E\",\"type\":\"card\",\"data\":{\"card_name\":\"Ticket Configuration\",\"col\":4}},{\"id\":\"3_hZUStEjI\",\"type\":\"card\",\"data\":{\"card_name\":\"Agent Configuration\",\"col\":4}},{\"id\":\"n_xOp9C7pk\",\"type\":\"card\",\"data\":{\"card_name\":\"Helpdesk Reports\",\"col\":4}},{\"id\":\"qgn5FB79J7\",\"type\":\"card\",\"data\":{\"card_name\":\"Automation\",\"col\":4}},{\"id\":\"gdTEN1-6Y-\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
+ "content": "[{\"id\":\"B6U0qNMVKn\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\" style=\\\"\\\"><a href=\\\"/helpdesk\\\">Visit Helpdesk</a></span>\",\"col\":12}},{\"id\":\"3C38cMww2v\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"uzKfzODpgb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ticket\",\"col\":3}},{\"id\":\"YAQwt_F_dX\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Helpdesk Configuration<br></span>\",\"col\":12}},{\"id\":\"7PNVFuxM_E\",\"type\":\"card\",\"data\":{\"card_name\":\"Ticket Configuration\",\"col\":4}},{\"id\":\"DsBbOis1kY\",\"type\":\"card\",\"data\":{\"card_name\":\"Contract\",\"col\":4}},{\"id\":\"3_hZUStEjI\",\"type\":\"card\",\"data\":{\"card_name\":\"Agent Configuration\",\"col\":4}},{\"id\":\"n_xOp9C7pk\",\"type\":\"card\",\"data\":{\"card_name\":\"Helpdesk Reports\",\"col\":4}},{\"id\":\"qgn5FB79J7\",\"type\":\"card\",\"data\":{\"card_name\":\"Automation\",\"col\":4}},{\"id\":\"gdTEN1-6Y-\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
  "creation": "2022-09-17 11:48:26.825712",
  "custom_blocks": [],
  "docstatus": 0,
@@ -162,9 +162,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contract",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Contract",
+   "link_count": 0,
+   "link_to": "HD Contract",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Billing Plan",
+   "link_count": 0,
+   "link_to": "HD Billing Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-03-26 18:57:29.812771",
+ "modified": "2024-04-12 13:05:08.273066",
  "modified_by": "Administrator",
  "module": "Helpdesk",
  "name": "Helpdesk",
@@ -175,6 +204,16 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Ticket",
+   "link_to": "HD Ticket",
+   "stats_filter": "[[\"HD Ticket\",\"status\",\"not in\",[\"Resolved\",\"Closed\",null],false]]",
+   "type": "DocType"
+  }
+ ],
  "title": "Helpdesk"
 }

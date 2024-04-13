@@ -420,14 +420,14 @@
    "fieldname": "time_tracking_table",
    "fieldtype": "Table",
    "label": "Time Entries",
-   "options": "HD Ticket Time Tracking",
+   "options": "ITSM Ticket Time Tracking",
    "read_only_depends_on": "eval:doc.status == ('Resolved' || 'Closed');"
   }
  ],
  "icon": "fa fa-issue",
  "idx": 61,
  "links": [],
- "modified": "2024-04-11 19:51:46.835552",
+ "modified": "2024-04-13 11:14:11.921837",
  "modified_by": "Administrator",
  "module": "Helpdesk",
  "name": "HD Ticket",
