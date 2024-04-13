@@ -7,7 +7,6 @@ from frappe.model.naming import append_number_if_name_exists
 from frappe.model.document import Document
 import frappe
 from frappe.realtime import get_website_room
-from helpdesk.utils import is_admin
 
 
 class HDSettings(Document):
@@ -54,34 +53,3 @@ class HDSettings(Document):
 		room = get_website_room()
 
 		frappe.publish_realtime(event, room=room, after_commit=True)
-	
-
-	def before_save(self):
-		if self.time_entry_maxduration == '':
-			self.time_entry_maxduration = None
-
-		if self.time_entry_rounding == '':
-			self.time_entry_rounding = None
-
-		if self.paused_duration_threshold == '':
-			self.paused_duration_threshold = None
-
-
-@frappe.whitelist()
-def get_timetracking_settings(customer=None):
-	settings = frappe.get_single("HD Settings")
-	enable_time_tracking = settings.enable_time_tracking
-	max_duration = settings.time_entry_maxduration
-	# Check if a customer is provided and if specific settings exist for this customer
-	if customer:
-		customer_settings = frappe.db.get_value("HD Customer", customer, "time_entry_maxduration")
-		if customer_settings:
-			max_duration = customer_settings  # Override max_duration with customer-specific settings
-
-	enable_time_tracking = True if enable_time_tracking == 1 and not is_admin() else False
-	max_duration = int(max_duration) * 1000 if max_duration else None  # Convert to milliseconds
-
-	return {
-		'enableTimeTracking': enable_time_tracking,
-		'maxDuration': max_duration,
-	}
