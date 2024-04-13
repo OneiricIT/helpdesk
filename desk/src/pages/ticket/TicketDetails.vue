@@ -330,7 +330,7 @@ watch(timerState, (newValue) => {
 async function fetchTimeSettings() {
   try {
       const customer = ticket.data.customer;
-      const url = new URL("/api/method/helpdesk.helpdesk.doctype.hd_settings.hd_settings.get_timetracking_settings", window.location.origin);
+      const url = new URL("/api/method/itsm.itsm.doctype.itsm_settings.itsm_settings.get_timetracking_settings", window.location.origin);
       if (customer) {
           url.searchParams.append('customer', customer);
       }
@@ -513,7 +513,7 @@ async function handleDialogClose(payload) {
 }
 
 async function createOrUpdateTimeEntry(action, data) {
-  const apiEndpoint = "/api/method/helpdesk.helpdesk.doctype.hd_ticket.api.create_or_update_time_entry";
+  const apiEndpoint = "/api/method/itsm.itsm.doctype.itsm_ticket.api.create_or_update_time_entry";
   const payload = {
     ticket_id: data.ticketId,
     agent: userId,
@@ -654,7 +654,7 @@ async function initializeTimer() {
 async function isTimeEntryActive(timeEntryId) {
   try {
     const response = await fetch(
-      `/api/method/helpdesk.helpdesk.doctype.hd_ticket.api.is_time_entry_running`,
+      `/api/method/itsm.itsm.doctype.itsm_ticket.api.is_time_entry_running`,
       {
         method: "POST",
         headers: {

@@ -15,9 +15,6 @@ scheduler_events = {
 	"all": [
 		"helpdesk.search.build_index_if_not_exists",
 	],
-	"daily": [
-		"helpdesk.helpdesk.doctype.hd_ticket_time_tracking.hd_ticket_time_tracking.check_and_alert_paused_time_entries",
-	],
 }
 
 
